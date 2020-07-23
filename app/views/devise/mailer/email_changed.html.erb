@@ -1,0 +1,12 @@
+<div class="container">
+
+
+<p>Holas <%= @email %>!</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Tu correo ha cambiado a:  <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Tu correo ha cambiado a <%= @resource.email %>.</p>
+<% end %>
+
+</div>
