@@ -10,9 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_07_22_235908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "candidates", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.bigint "organization_id"
+    t.bigint "sector_id"
+    t.string "name"
+    t.string "last_name"
+    t.integer "tax_id_number"
+    t.string "place_of_birth"
+    t.string "place_of_residence"
+    t.string "address"
+    t.integer "residence_area_type"
+    t.integer "phone"
+    t.integer "secondary_phone"
+    t.integer "education_level"
+    t.string "expertise"
+    t.string "value_proposition"
+    t.boolean "disclaimer"
+    t.index ["email"], name: "index_candidates_on_email", unique: true
+    t.index ["organization_id"], name: "index_candidates_on_organization_id"
+    t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
+    t.index ["sector_id"], name: "index_candidates_on_sector_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.bigint "sector_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sector_id"], name: "index_organizations_on_sector_id"
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "voters", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_voters_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_voters_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "candidates", "organizations"
+  add_foreign_key "candidates", "sectors"
+  add_foreign_key "organizations", "sectors"
 end
