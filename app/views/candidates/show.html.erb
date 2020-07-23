@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Información del candidato</h1>
+
+  <p><%= "#{@candidate.name} #{@candidate.last_name}" %></p>
+  <p><%= @candidate.phone %></p>
+
+  <%= cl_image_tag(@candidate.photo.key, secure: true, width: 340, height: 452, crop: :fit )%>
+
+  <%= link_to "Ver documento de indentidad", url_for(@candidate.document), target:"_blank"  %>
+  <% if @candidate.confirmation_letter.attached? %>
+    <%= link_to "Ver carta de confirmación", url_for(@candidate.confirmation_letter), target:"_blank"   %>
+  <% end %>
+  <% if @candidate.organization_confirmation_letter.attached? %>
+    <%= link_to "Ver cart de confirmación de la entidad", url_for(@candidate.organization_confirmation_letter), target:"_blank"  %>
+  <% end %>
+  <%= link_to "editar Información" , edit_candidate_registration_path, class:"btn btn-primary" %>
+</div>
