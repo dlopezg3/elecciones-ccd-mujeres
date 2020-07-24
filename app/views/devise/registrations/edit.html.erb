@@ -11,17 +11,17 @@
     <%= f.input :place_of_birth, required: true %>
     <%= f.input :place_of_residence, required: true %>
     <%= f.input :address, required: true %>
-    <%= f.input :residence_area_type, required: true, collection: ["Rural", "Otra"] %>
+    <%= f.input :residence_area_type, required: true, collection: ["Rural", "Urbano"] %>
     <%= f.input :phone, required: true, as: :tel %>
     <%= f.input :secondary_phone, as: :tel %>
-    <%= f.input :education_level, required: true %>
+    <%= f.input :education_level, required: true, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
     <%= f.input :expertise, required: true, as: :text %>
     <%= f.input :value_proposition, required: true, as: :text %>
     <%= f.input :photo, as: :file %>
     <%= f.input :document, as: :file  %>
     <%= f.input :confirmation_letter, as: :file  %>
     <%= f.input :organization_confirmation_letter, as: :file  %>
-    <%= f.input :disclaimer, required: true %>
+    <%= f.input :disclaimer, required: true, label: "Aceptar condiciones" %>
   </div>
 
   <div class="form-actions">
@@ -29,3 +29,6 @@
   </div>
 <% end %>
 </div>
+
+
+
