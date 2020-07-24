@@ -11,7 +11,7 @@ class AddColumnsToCandidate < ActiveRecord::Migration[6.0]
     add_column :candidates, :residence_area_type, :integer
     add_column :candidates, :phone, :integer
     add_column :candidates, :secondary_phone, :integer
-    add_column :candidates, :education_level, :integer
+    add_column :candidates, :education_level, :string
     add_column :candidates, :expertise, :string
     add_column :candidates, :value_proposition, :string
     add_column :candidates, :disclaimer, :boolean
