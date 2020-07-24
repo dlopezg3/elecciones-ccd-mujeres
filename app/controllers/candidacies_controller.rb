@@ -1,6 +1,6 @@
 class CandidaciesController < ApplicationController
   def show
-    @candidacy = Candidacy.find(params)
+    @candidacy = Candidacy.find(params[:id])
   end
 
   def new
@@ -13,7 +13,7 @@ class CandidaciesController < ApplicationController
     byebug
     if @candidacy.save
       flash[:notice] = "Tu candidatura ha sido creada con éxito"
-      redirect_to candidacy_path(@candidate)
+      redirect_to candidacy_path(@candidacy)
     else
       flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
       render 'new'
@@ -24,7 +24,7 @@ class CandidaciesController < ApplicationController
 
   def candidacy_params
     params.require(:candidacy).permit(:organization,
-                                   :sector,
+                                   :sector_id,
                                    :name,
                                    :last_name,
                                    :tax_id_number,
