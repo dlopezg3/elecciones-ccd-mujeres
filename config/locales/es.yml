@@ -8,43 +8,31 @@ es:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
     attributes:
-      atention:
-        id: id
-        technologist: Tecnólogo
-        business: Negocio
-        channel: Canal
-        cause: Causa
-        subcause: Subcausa
-        detail: Detalle
-        solution: Solución
-        escalation: Escalamiento
-        escalation_responsable: Responsable de escalamiento
-        created_at: Fecha de creación
-        updated_at: Fecha de modicación
-        user_name: Profesional
-      business:
-        name: Nombre
-        created_at: Fecha de creación
-        updated_at: Fecha de modicación
-      office:
-        name: Nombre
-        created_at: Fecha de creación
-        updated_at: Fecha de modicación
-      region:
-        name: Nombre
-        created_at: Fecha de creación
-        updated_at: Fecha de modicación
-      technologist:
-        name: Nombre
-        created_at: Fecha de creación
-        updated_at: Fecha de modicación
+      candidacy:
+        name: "Nombres"
+        last_name: "Apellidos"
+        tax_id_number: "Número de cédula"
+        place_of_birth: "Lugar de nacimiento"
+        place_of_residence: "Lugar de residencia"
+        address: "Dirección de residencia"
+        residence_area_type: "Tipo de área de residencia"
+        phone: "Celular"
+        secondary_phone: "Otro número de contacto"
+        education_level: "Nivel educativo alcanzado"
+        expertise: "Experiencia académica y/o laboral y/o comunitaria"
+        value_proposition: "Propuesta"
+        disclaimer: "Condicioness"
+        organization: "Nombre de la organización o comunidad a la cual pertenece"
+        photo: Foto
+        document: Carta de la organización
+        confirmation_letter: Aval de la organización
+        organization_confirmation_letter: Certificado de existencia de la organización
     models:
-      atention: Atención
-      business: Negocio
-      office: Oficina
-      technologist: Tecnólogo
+      candidate: Candidato
+      candidacy: Candidatura
+      Sector: Sector
+      Voter: Votante
       user: Usuario
-      region: Región
   date:
     abbr_day_names:
     - dom
