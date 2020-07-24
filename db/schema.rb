@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_220755) do
+ActiveRecord::Schema.define(version: 2020_07_24_191839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,29 @@ ActiveRecord::Schema.define(version: 2020_07_23_220755) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "candidacies", force: :cascade do |t|
+    t.bigint "candidate_id", null: false
+    t.bigint "sector_id", null: false
+    t.string "name"
+    t.string "last_name"
+    t.bigint "tax_id_number"
+    t.string "place_of_birth"
+    t.string "place_of_residence"
+    t.string "address"
+    t.string "residence_area_type"
+    t.bigint "phone"
+    t.bigint "secondary_phone"
+    t.string "education_level"
+    t.string "expertise"
+    t.string "value_proposition"
+    t.boolean "disclaimer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "organization"
+    t.index ["candidate_id"], name: "index_candidacies_on_candidate_id"
+    t.index ["sector_id"], name: "index_candidacies_on_sector_id"
+  end
+
   create_table "candidates", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,25 +67,8 @@ ActiveRecord::Schema.define(version: 2020_07_23_220755) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.bigint "organization_id"
-    t.bigint "sector_id"
-    t.string "name"
-    t.string "last_name"
-    t.integer "tax_id_number"
-    t.string "place_of_birth"
-    t.string "place_of_residence"
-    t.string "address"
-    t.integer "residence_area_type"
-    t.bigint "phone"
-    t.bigint "secondary_phone"
-    t.string "education_level"
-    t.string "expertise"
-    t.string "value_proposition"
-    t.boolean "disclaimer"
     t.index ["email"], name: "index_candidates_on_email", unique: true
-    t.index ["organization_id"], name: "index_candidates_on_organization_id"
     t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
-    t.index ["sector_id"], name: "index_candidates_on_sector_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -77,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_220755) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "org_type"
   end
 
   create_table "voters", force: :cascade do |t|
@@ -92,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_220755) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "candidates", "organizations"
-  add_foreign_key "candidates", "sectors"
+  add_foreign_key "candidacies", "candidates"
+  add_foreign_key "candidacies", "sectors"
   add_foreign_key "organizations", "sectors"
 end
