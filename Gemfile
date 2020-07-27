@@ -18,6 +18,12 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'redis'
+
+gem 'letter_opener', group: :development
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
