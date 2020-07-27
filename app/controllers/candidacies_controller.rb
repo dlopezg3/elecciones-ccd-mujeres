@@ -10,7 +10,6 @@ class CandidaciesController < ApplicationController
   def create
     @candidacy = Candidacy.new(candidacy_params)
     @candidacy.candidate = current_candidate
-    byebug
     if @candidacy.save
       flash[:notice] = "Tu candidatura ha sido creada con éxito"
       redirect_to candidacy_path(@candidacy)
