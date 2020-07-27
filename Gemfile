@@ -21,6 +21,8 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'redis'
+gem 'postmark-rails'
+
 
 gem 'letter_opener', group: :development
 
