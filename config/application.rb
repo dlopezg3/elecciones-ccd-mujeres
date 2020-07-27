@@ -18,6 +18,7 @@ module EleccionesCcdMujeres
     config.i18n.default_locale = :es
     config.time_zone = 'Bogota'
     config.active_record.default_timezone = :local
+    config.active_job.queue_adapter = :sidekiq
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
