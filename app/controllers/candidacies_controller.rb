@@ -11,6 +11,7 @@ class CandidaciesController < ApplicationController
 
   def new
     @candidacy = Candidacy.new
+    authorize @candidacy
   end
 
   def create
