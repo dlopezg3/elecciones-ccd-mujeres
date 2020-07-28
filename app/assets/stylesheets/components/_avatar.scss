@@ -18,3 +18,17 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+.profile-avatar {
+  border-radius: 4%;
+  background-size: cover;
+  font-size: 60px;
+  // max-height: 100%;
+  height: 240px;
+  width: 240px;
+  background-color: gray;
+  margin: 0 auto;
+}
+.profile-avatar div {
+  height:100%
+}
+

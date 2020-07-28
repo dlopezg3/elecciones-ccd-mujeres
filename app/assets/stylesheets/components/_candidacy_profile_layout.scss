@@ -1,0 +1,41 @@
+@media (min-width: 900px) {
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+          "profile expertise"
+          "profile expertise"
+          "profile expertise"
+          "profile expertise"
+          "sector value_proposition"
+          "sector value_proposition"
+          "organization value_proposition"
+          "organization value_proposition";
+    grid-gap: 24px;
+    // background-color: #2196F3;
+    padding: 64px;
+    min-height: calc(100vh - 56px);
+  }
+  .profile-column {
+    // background-color: blue;
+    grid-area: profile;
+    // background-color: #fff;
+    // background-clip: border-box;
+    // border: 1px solid rgba(0, 0, 0, 0.125);
+    // border-radius: 2px;
+    padding: 16px;
+  }
+  .expertise {
+    grid-area: expertise,
+  }
+  .value_proposition {
+    grid-area: value_proposition,
+  }
+  .organization {
+    grid-area: organization;
+  }
+  .sector {
+    grid-area: sector;
+  }
+}
