@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :voters
   devise_for :candidates, controllers: { registrations: "candidates/registrations" }
 
-  resources :candidacies, only: [:show, :new, :create]
+  resources :candidacies, only: [:show, :new, :create, :edit, :update]
 
   root to: 'pages#home'
 

@@ -23,6 +23,7 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'redis'
 gem 'postmark-rails'
 
+gem 'pundit'
 
 gem 'letter_opener', group: :development
 

@@ -16,5 +16,5 @@
   <% if @candidacy.organization_confirmation_letter.attached? %>
     <%= link_to "Ver carta de confirmación de la entidad", url_for(@candidacy.organization_confirmation_letter), target:"_blank", class:"btn btn-secondary"  %>
   <% end %>
-  <%#= link_to "editar Información" , edit_candidacy_path, class:"btn btn-primary" %>
+  <%= link_to "editar Información" , edit_candidacy_path(@candidacy), class:"btn btn-primary" %>
 </div>

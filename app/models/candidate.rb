@@ -4,5 +4,5 @@ class Candidate < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :candidacies, dependent: :destroy
+  has_one :candidacy, dependent: :destroy
 end

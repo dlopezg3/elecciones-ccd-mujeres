@@ -2,5 +2,9 @@
   <h1>Página de bienvenida</h1>
   <p>Texto con información de bienvenida</p>
 
-  <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary" %>
+  <%# if current_candidate.candidacy %>
+    <%#= link_to "Editar candidatura", edit_candidacy_path(@candidate.candidacy), class: "btn btn-primary" %>
+  <%# else %>
+    <%#= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary" %>
+  <%# end %>
 </div>
