@@ -15,7 +15,7 @@
                   input_html: { autocomplete: "email" }%>
       <%= f.input :password,
                   required: true,
-                  hint: ("#{@minimum_password_length} carácteres mínimo" if @minimum_password_length),
+                  hint: ("La contraseña debe contenter por lo menos 6 caracteres y un caracter especial"),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   required: true,

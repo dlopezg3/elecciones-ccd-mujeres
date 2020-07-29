@@ -13,7 +13,7 @@
                 label: "New password",
                 required: true,
                 autofocus: true,
-                hint: ("#{@minimum_password_length} caracteres mínimo" if @minimum_password_length),
+                hint: ("La contraseña debe contenter por lo menos 6 caracteres y un caracter especial"),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 label: "Confirm your new password",
