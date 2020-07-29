@@ -1,20 +1,59 @@
-<div class="container">
-  <h1>Información del candidato</h1>
-
-  <p>Nombre: <%= "#{@candidacy.name} #{@candidacy.last_name}" %></p>
-  <p>Teléfono: <%= @candidacy.phone %></p>
-
-  <% if @candidacy.photo.attached? %>
-    <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 340, height: 452, crop: :fit )%>
-  <% end %>
-  <% if @candidacy.document.attached? %>
-    <%= link_to "Ver documento de indentidad", url_for(@candidacy.document), target:"_blank", class:"btn btn-secondary"  %>
-  <% end %>
-  <% if @candidacy.confirmation_letter.attached? %>
-    <%= link_to "Ver carta de confirmación", url_for(@candidacy.confirmation_letter), target:"_blank", class:"btn btn-secondary"   %>
-  <% end %>
-  <% if @candidacy.organization_confirmation_letter.attached? %>
-    <%= link_to "Ver carta de confirmación de la entidad", url_for(@candidacy.organization_confirmation_letter), target:"_blank", class:"btn btn-secondary"  %>
-  <% end %>
-  <%= link_to "editar Información" , edit_candidacy_path(@candidacy), class:"btn btn-primary" %>
+<div class="main-container">
+  <div class="profile-column">
+    <div class="profile-avatar">
+      <% if @candidacy.photo.attached? %>
+        <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 240, height: 240, crop: :fit, class: 'business-show-logo') %>
+      <% else %>
+        <div class="rounded-lg d-flex justify-content-center align-items-center text-uppercase">
+          <p class="font-weight-bold m-0 default-image"><%= @candidacy.initials %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="card text-center profile-card sector">
+    <h6 class="text-justify font-weight-bold text-center">
+      Sector:
+    </h6>
+    <h6 class="text-justify">
+      <%= @candidacy.sector.name %>
+    </h6>
+  </div>
+  <div class="card text-center profile-card organization">
+    <h6 class="text-justify font-weight-bold text-center">
+      Organización:
+    </h6>
+    <h6 class="text-justify">
+      <%= @candidacy.organization %>
+    </h6>
+  </div>
+  <div class="card text-center profile-card expertise">
+    <div class="card-body">
+      <div class="card-title">
+        <h1 class="font-weight-bold">
+          <%= "#{@candidacy.name} #{@candidacy.last_name}" %>
+        </h1 class="font-weight-bold">
+      </div>
+      <div class="card-description">
+        <p>
+          <%= @candidacy.expertise %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card card text-center profile-card value_proposition">
+    <div class="card-body">
+      <div class="card-title">
+        <h6 class="font-weight-bold">
+          Propuesta de aporte al Consejo Consultivo departamental de mujeres
+        </h6 class="font-weight-bold">
+      </div>
+      <div class="card-description">
+        <p>
+          <%= @candidacy.value_proposition %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+
+
