@@ -2,7 +2,7 @@
   <div class="profile-column">
     <div class="profile-avatar">
       <% if @candidacy.photo.attached? %>
-        <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 240, height: 240, crop: :fit, class: 'business-show-logo') %>
+        <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 340, height: 340, class: 'business-show-logo') %>
       <% else %>
         <div class="rounded-lg d-flex justify-content-center align-items-center text-uppercase">
           <p class="font-weight-bold m-0 default-image"><%= @candidacy.initials %></p>
@@ -14,15 +14,15 @@
     <h6 class="text-justify font-weight-bold text-center">
       Sector:
     </h6>
-    <h6 class="text-justify">
+    <h6 class="text-justify text-center">
       <%= @candidacy.sector.name %>
     </h6>
   </div>
   <div class="card text-center profile-card organization">
-    <h6 class="text-justify font-weight-bold text-center">
+    <h6 class="font-weight-bold text-center">
       Organización:
     </h6>
-    <h6 class="text-justify">
+    <h6 class="text-center">
       <%= @candidacy.organization %>
     </h6>
   </div>
@@ -33,7 +33,7 @@
           <%= "#{@candidacy.name} #{@candidacy.last_name}" %>
         </h1 class="font-weight-bold">
       </div>
-      <div class="card-description">
+      <div class="card-description text-justify">
         <p>
           <%= @candidacy.expertise %>
         </p>
@@ -47,7 +47,7 @@
           Propuesta de aporte al Consejo Consultivo departamental de mujeres
         </h6 class="font-weight-bold">
       </div>
-      <div class="card-description">
+      <div class="card-description text-justify">
         <p>
           <%= @candidacy.value_proposition %>
         </p>

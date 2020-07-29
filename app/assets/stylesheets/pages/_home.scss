@@ -1,1 +1,16 @@
+
 // Specific CSS for your home-page
+.home-container {
+  background-image: url('fondo-formulario-ccm2.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 56px);
+}
+.home-container-plain {
+  background-image: url('fondo-formulario-ccm1.jpg');
+  background-size: cover;
+  min-height: calc(100vh - 56px);
+}
+

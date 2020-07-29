@@ -1,10 +1,9 @@
-<div class="container">
-  <h1>Página de bienvenida</h1>
-  <p>Texto con información de bienvenida</p>
-
-  <%# if current_candidate.candidacy %>
-    <%#= link_to "Editar candidatura", edit_candidacy_path(@candidate.candidacy), class: "btn btn-primary" %>
-  <%# else %>
-    <%#= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary" %>
-  <%# end %>
+<div class="home-container">
+  <div class="home-btn">
+    <% if current_candidate.nil? %>
+      <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary btn-lg" %>
+    <% else %>
+      <%= link_to "Ver candidatura", candidacy_path(current_candidate.candidacy), class: "btn btn-primary btn-lg" %>
+    <% end %>
+  </div>
 </div>

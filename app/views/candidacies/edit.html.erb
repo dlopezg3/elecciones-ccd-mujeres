@@ -1,36 +1,49 @@
-<div class="container p-4">
-<h2> Diligencie la información para registrar la candidatura</h2>
+<div class="home-container-plain">
 
-<%= simple_form_for(@candidacy) do |f| %>
+  <div class="container p-4 ">
+  <h2 class="mb-4 pb-4"> Diligencia la información para registrar la candidatura</h2>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :last_name %>
-    <%= f.input :tax_id_number %>
-    <%= f.input :place_of_birth %>
-    <%= f.input :place_of_residence %>
-    <%= f.association :sector, label: "Sector al que pertence" %>
-    <%= f.input :organization %>
-    <%= f.input :address %>
-    <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
-    <%= f.input :phone, as: :tel %>
-    <%= f.input :secondary_phone, as: :tel %>
-    <%= f.input :education_level, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
-    <%= f.input :expertise, as: :text, hint: "Describir brevemente los logros a nivel académico, laboral y/o comunitario en favor del reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres en el sector que representa. Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidata" %>
-    <%= f.input :value_proposition, as: :text, label: "¿Qué aportaría desde su experiencia, conocimientos y acciones al Consejo Consultivo departamental de mujeres?", hint: "Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidatas" %>
-    <%= f.input :photo, as: :file, hint: "Adjuntar una foto personal.  Esta será cargada en la plataforma" %>
-    <%= f.input :document, as: :file, hint: "Adjuntar una carta firmada por la/el Representante Legal, Director/a, Presidenta/e o Coordinador/a de la organización, grupo, o comunidad a la que representa, en la que conste la experiencia de la organización y de la candidata que se postula, en el reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres y específicamente del sector que se va a representar." %>
-    <%= f.input :confirmation_letter, as: :file, hint: "Adjuntar carta firmada por la/el Representante Legal, Director/a, Presidenta/e o Coordinador/a de la organización, grupo, o comunidad a la que representa, en la que conste la experiencia de la organización y de la candidata que se postula, en el reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres y específicamente del sector que se va a representar."  %>
-    <%= f.input :organization_confirmation_letter, as: :file, hint: "Adjuntar una copia de la personería jurídica o del registro de Cámara de Comercio, o declaración extrajuicio, o cualquier otro documento que acredite la existencia de la organización emitido por entidades u organizaciones que conozcan el proceso." %>
-    <%= f.input :autonomus_confirmation_letter, as: :file, hint: "Carta adicional si el sector al que pertenece es autonomo." %>
-    <div class="mt-4">
-      <%= f.input :disclaimer, label: "Aceptar condiciones"%>
+  <%= simple_form_for @candidacy,  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    boolean:       :horizontal_boolean,
+    check_boxes:   :horizontal_collection,
+    date:          :horizontal_multi_select,
+    datetime:      :horizontal_multi_select,
+    file:          :horizontal_file,
+    radio_buttons: :horizontal_collection,
+    range:         :horizontal_range,
+    time:          :horizontal_multi_select
+  }   do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :last_name %>
+      <%= f.input :tax_id_number %>
+      <%= f.input :place_of_birth %>
+      <%= f.input :place_of_residence %>
+      <%= f.association :sector, label: "Sector al que pertence" %>
+      <%= f.input :organization %>
+      <%= f.input :address %>
+      <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
+      <%= f.input :phone, as: :tel %>
+      <%= f.input :secondary_phone, as: :tel %>
+      <%= f.input :education_level, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
+      <%= f.input :expertise, as: :text, hint: "Describir brevemente los logros a nivel académico, laboral y/o comunitario en favor del reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres en el sector que representa. Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidata" %>
+      <%= f.input :value_proposition, as: :text, label: "¿Qué aportaría desde su experiencia, conocimientos y acciones al Consejo Consultivo departamental de mujeres?", hint: "Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidatas" %>
+      <%= f.input :photo, as: :file, hint: "Adjuntar una foto personal.  Esta será cargada en la plataforma" %>
+      <%= f.input :document, as: :file, hint: "Adjuntar una carta firmada por la/el Representante Legal, Director/a, Presidenta/e o Coordinador/a de la organización, grupo, o comunidad a la que representa, en la que conste la experiencia de la organización y de la candidata que se postula, en el reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres y específicamente del sector que se va a representar." %>
+      <%= f.input :confirmation_letter, as: :file, hint: "Adjuntar carta firmada por la/el Representante Legal, Director/a, Presidenta/e o Coordinador/a de la organización, grupo, o comunidad a la que representa, en la que conste la experiencia de la organización y de la candidata que se postula, en el reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres y específicamente del sector que se va a representar."  %>
+      <%= f.input :organization_confirmation_letter, as: :file, hint: "Adjuntar una copia de la personería jurídica o del registro de Cámara de Comercio, o declaración extrajuicio, o cualquier otro documento que acredite la existencia de la organización emitido por entidades u organizaciones que conozcan el proceso." %>
+      <%= f.input :autonomus_confirmation_letter, as: :file, hint: "Carta adicional si el sector al que pertenece es autonomo." %>
+      <div class="mt-4">
+        <%= f.input :disclaimer, label: "Aceptar condiciones"%>
+      </div>
     </div>
-  </div>
 
-  <div class="form-actions mb-4 mt-4">
-    <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> -->
-    <%= f.button :submit, "Actualizar", class:"btn btn-primary" %>
+    <div class="form-actions mb-4 mt-4">
+      <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> -->
+      <%= f.button :submit, "Actualizar", class:"btn btn-primary" %>
+    </div>
+  <% end %>
   </div>
-<% end %>
 </div>

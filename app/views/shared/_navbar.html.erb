@@ -11,7 +11,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if entity_signed_in? %>
-        <%= link_to "Cerrar Sesión", destroy_candidate_session_path, method: :delete, class: "dropdown-item" %>
+        <% if current_candidate.candidacy %>
+          <%= link_to "Editar Candidatura", edit_candidacy_path(current_candidate.candidacy), class: "nav-link" %>
+        <% else %>
+          <%= link_to "Crear Candidatura", new_candidacy_path, class: "nav-link" %>
+        <% end %>
+        <%= link_to "Cerrar Sesión", destroy_candidate_session_path, method: :delete, class: "nav-link" %>
       <% else %>
         <li class="nav-item">
           <%= link_to "Iniciar Sesión", new_candidate_session_path, class: "nav-link" %>
