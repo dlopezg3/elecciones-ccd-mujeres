@@ -2,6 +2,8 @@
     <div class="home-btn">
       <% if current_candidate.nil? %>
         <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary btn-lg" %>
+      <% elsif current_candidate.candidacy.nil? %>
+        <%= link_to "Registrar candidatura", new_candidate_session_path, class: "btn btn-primary btn-lg" %>
       <% else %>
         <%= link_to "Ver candidatura", candidacy_path(current_candidate.candidacy), class: "btn btn-primary btn-lg" %>
       <% end %>
