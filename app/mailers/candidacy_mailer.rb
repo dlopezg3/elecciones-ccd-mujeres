@@ -9,6 +9,6 @@ class CandidacyMailer < ApplicationMailer
     @candidacy = params[:candidacy]
     @candidate = params[:candidate]
 
-    mail(to: @candidate.email, subject: "Correo de prueba")
+    mail(to: @candidate.email, subject: "Confirmación de Registro")
   end
 end
