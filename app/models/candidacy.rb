@@ -8,7 +8,7 @@ class Candidacy < ApplicationRecord
   has_one_attached :organization_confirmation_letter
   has_one_attached :autonomus_confirmation_letter
 
-  after_create :send_confirmation_email
+  # after_create :send_confirmation_email
 
   validates :name, presence: true
   validates :last_name, presence: true
@@ -33,6 +33,6 @@ class Candidacy < ApplicationRecord
   private
 
   def send_confirmation_email
-    CandidacyMailer.with(candidacy: self, candidate: self.candidate).confirmation.deliver_now
+    # CandidacyMailer.with(candidacy: self, candidate: self.candidate).confirmation.deliver_now
   end
 end
