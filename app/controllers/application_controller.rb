@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource_or_scope)
-    candidacy_path(current_candidate.candidacy)
+    candidacy_path(current_candidate.candidacy) unless current_candidate.candidacy.nil?
+    new_candidacy_path
   end
 
   def skip_pundit?
