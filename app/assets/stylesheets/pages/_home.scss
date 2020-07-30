@@ -3,14 +3,20 @@
 .home-container {
   background-image: url("https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm2_mfj8hr.jpg");
   background-size: cover;
+  min-height: calc(100vh - 56px);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 56px);
 }
 .home-container-plain {
   background-image: url('https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm1_hvwibd.jpg');
   background-size: cover;
   min-height: calc(100vh - 56px);
 }
-
+.home-info {
+  position: relative;
+  bottom: 240px;
+  text-align: justify;
+  padding: 56px;
+  // position: relative;
+}

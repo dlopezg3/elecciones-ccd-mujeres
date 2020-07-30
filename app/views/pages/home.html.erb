@@ -1,9 +1,62 @@
 <div class="home-container">
-  <div class="home-btn">
-    <% if current_candidate.nil? %>
-      <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary btn-lg" %>
-    <% else %>
-      <%= link_to "Ver candidatura", candidacy_path(current_candidate.candidacy), class: "btn btn-primary btn-lg" %>
-    <% end %>
+    <div class="home-btn">
+      <% if current_candidate.nil? %>
+        <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary btn-lg" %>
+      <% else %>
+        <%= link_to "Ver candidatura", candidacy_path(current_candidate.candidacy), class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+</div>
+<div class="home-info">
+  <div class="card p-4 text-center">
+    <h2 class="mb-4">Consejo Consultivo de Mujeres de Antioquia</h2>
+
+    <h4 class="mb-4">¡Bienvenidas mujeres del Departamento!</h4>
+
+    <p class="text-justify">
+      Desde la Secretaría de Mujeres extendemos nuestro agradecimiento por su interés en participar en la reactivación de este mecanismo participativo que, después de diez años de inactividad, pretende ser el espacio de escucha y generación de propuestas y soluciones a las necesidades e intereses de las mujeres antioqueñas.
+    </p>
+
+    <p>
+      <strong>¿Qué es el Consejo Consultivo de Mujeres de Antioquia?</strong>
+    </p>
+
+    <p class="text-justify">Es un espacio participativo de diálogo, concertación y análisis para la implementación de la Política Pública de las Mujeres de Antioquia.</p>
+
+    <p>
+      <strong>
+        ¿Para qué un Consejo Consultivo de Mujeres?
+      </strong>
+    </p>
+
+    <p class="text-justify">
+      Este mecanismo técnico y político que nos permite establecer una relación articulada y corresponsable con la sociedad civil; con el fin de promover una participación real y efectiva de las mujeres del departamento en el análisis y la generación de propuestas en torno a sus intereses y necesidades particulares.
+    </p>
+
+    <p>
+      <strong>
+        ¿Quiénes lo conforman?
+      </strong>
+    </p>
+
+    <p class="text-justify">
+      32 mujeres. Una representante de cada una de las nueve subregiones de Antioquia y una representante por cada uno de los 23 sectores de la sociedad civil descritos más abajo. (Y el mismo número de suplentes)
+    </p>
+
+    <p> <%= link_to "Consulte los términos de participación", "https://bit.ly/terminos-ccma", target:"_blank", class:"btn btn-outline-secondary" %></p>
+
+    <strong class="mt-4">
+      Mayores informes
+    </strong>
+
+    <p>
+      Jenny Chica | Secretaría de las Mujeres de Antioquia | Cel: 3117458831
+    </p>
+
+    <p>
+      Jorge Mariaca | Secretaría de las Mujeres de Antioquia | Cel: 312 7347376
+    </p>
+
+    <p>Correo electrónico: politicaspublicasmujeres@antioquia.gov.co</p>
   </div>
 </div>
