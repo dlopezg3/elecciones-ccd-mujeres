@@ -27,7 +27,7 @@ es:
         document: Carta de la organización
         confirmation_letter: Aval de la organización
         organization_confirmation_letter: Certificado de existencia de la organización
-        autonomus_confirmation_letter: Carta adicional si es autonoma
+        autonomus_confirmation_letter: Carta aceptación sectores autónomos
     models:
       candidate: Candidata
       candidacy: Candidatura
