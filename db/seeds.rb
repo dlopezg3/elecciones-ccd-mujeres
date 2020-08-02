@@ -36,8 +36,30 @@ orgs = { "Mujeres de las Granjas SIEMBRA" => "Autonóma",
 }
 
 orgs.each do |o, t|
-  puts o
   sector = Sector.new(name: o, org_type: t)
   sector.save
 end
+
+d = Candidate.new(email: "dlopez.10g@gmail.com", password: "dan123*")
+d.save
+
+c = Candidacy.new("candidate": Candidate.find_by(email: "dlopez.10g@gmail.com") ,
+                  "sector": Sector.last,
+                  "name": "Daniel" ,
+                  "last_name": "López",
+                  "tax_id_number": 10401828,
+                  "place_of_birth": "Rionegro" ,
+                  "place_of_residence": "Sabaneta" ,
+                  "address": "cra asda" ,
+                  "phone": 31857413187 ,
+                  "expertise": "blabla",
+                  "value_proposition": "blabla" ,
+                  "disclaimer": true ,
+                  "organization": "Organization name")
+c.photo.attach(io: File.open('app/assets/images/unidas-solito.png'), filename: 'foto.png')
+c.document.attach(io: File.open('app/assets/images/unidas-solito.png'), filename: 'foto.png')
+c.confirmation_letter.attach(io: File.open('app/assets/images/unidas-solito.png'), filename: 'foto.png')
+c.organization_confirmation_letter.attach(io: File.open('app/assets/images/unidas-solito.png'), filename: 'foto.png')
+c.autonomus_confirmation_letter.attach(io: File.open('app/assets/images/unidas-solito.png'), filename: 'foto.png')
+c.save!
 
