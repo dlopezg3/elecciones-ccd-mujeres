@@ -23,6 +23,9 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'redis'
 gem 'postmark-rails'
 
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin-xls', '~>2.0.0'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'pundit'
 
