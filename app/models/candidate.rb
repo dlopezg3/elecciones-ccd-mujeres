@@ -9,9 +9,8 @@ class Candidate < ApplicationRecord
   validate :password_complexity
 
   def password_complexity
-    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     return if password.blank? || password =~ /^(?=.*?[a-z])(?=.*?[#?!@$%^&*-]).{6,70}$/
 
-    errors.add :password, 'La contraseña debe contenter por lo menos 6 caracteres y un caracter especial como #?!@$%^&*-'
+    errors.add :password, 'La contraseña debe contenter por lo menos 6 caracteres, una letra y un caracter especial como #?!@$%^&*-'
   end
 end
