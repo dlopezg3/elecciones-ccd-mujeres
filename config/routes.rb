@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
+  devise_for :admins
   get 'candidates/show'
   devise_for :voters
   devise_for :candidates, controllers: { registrations: "candidates/registrations" }
