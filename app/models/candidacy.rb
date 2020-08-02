@@ -1,4 +1,6 @@
 class Candidacy < ApplicationRecord
+  include ActionView::Helpers::UrlHelper
+
   belongs_to :candidate
   belongs_to :sector
 
@@ -28,6 +30,13 @@ class Candidacy < ApplicationRecord
     return if name.blank?
 
     "#{name} #{last_name}".split(" ").map { |word| word[0] }.reduce(:+)[0..1]
+  end
+
+
+  def cloudinary_url(object)
+    return "Sin adjunto" unless object.attachment.present?
+
+    link_to("Ver adjunto", object.service_url, target:"_blank").html_safe
   end
 
   private
