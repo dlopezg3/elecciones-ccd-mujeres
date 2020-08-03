@@ -26,9 +26,8 @@ ActiveAdmin.register Candidacy do
     column :value_proposition
     column("Foto") { |candidacy| candidacy.cloudinary_url(candidacy.photo) }
     column("Documento de identidad") { |candidacy| candidacy.cloudinary_url(candidacy.document) }
-    column("Carta de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.confirmation_letter) }
-    column("Aval de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.organization_confirmation_letter) }
-    column("Certificado de existencia de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.autonomus_confirmation_letter) }
+    column("Aval de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.confirmation_letter) }
+    column("Certificado de existencia de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.organization_confirmation_letter) }
     column("Carta aceptación sectores autónomos") { |candidacy| candidacy.cloudinary_url(candidacy.autonomus_confirmation_letter) }
   end
 
