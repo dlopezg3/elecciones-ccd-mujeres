@@ -1,6 +1,6 @@
 def authenticate_user_admin!
   unless current_admin && current_admin.admin
-    flash[:alert] = "No estás autorizado para ralizar esta acción"
+    flash[:alert] = "No estás autorizado para realizar esta acción"
     redirect_to root_path
   end
 end

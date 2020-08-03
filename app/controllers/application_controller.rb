@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   devise_group :entity, contains: [:candidate, :voter]
-  before_action :authenticate!
+
+  before_action :authenticate!, except: [:sessions, :registrations, :passwords]
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -21,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate!
     if current_entity == current_admin
-      :authenticate_admin!
+      :authenticate_user_admin!
     elsif current_entity == current_candidate
       :authenticate_candidate!
     end

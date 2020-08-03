@@ -3,6 +3,8 @@ ActiveAdmin.register Candidacy do
   actions :index, :show, :update, :edit
   config.sort_order = 'created_at_desc'
 
+  filter :sector_name, as: :select, collection: -> {Sector.pluck(:name)}, label: "Sector"
+
   index do
     index_column
     actions dropdown: true do |candidacy|
@@ -40,21 +42,4 @@ ActiveAdmin.register Candidacy do
     column("organization_confirmation_letter") { |candidacy| candidacy.organization_confirmation_letter.service_url }
     column("autonomus_confirmation_letter") { |candidacy| candidacy.autonomus_confirmation_letter.service_url }
   end
-
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :candidate_id, :sector_id, :name, :last_name, :tax_id_number, :place_of_birth, :place_of_residence, :address, :residence_area_type, :phone, :secondary_phone, :education_level, :expertise, :value_proposition, :disclaimer, :organization
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:candidate_id, :sector_id, :name, :last_name, :tax_id_number, :place_of_birth, :place_of_residence, :address, :residence_area_type, :phone, :secondary_phone, :education_level, :expertise, :value_proposition, :disclaimer, :organization]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-
 end
