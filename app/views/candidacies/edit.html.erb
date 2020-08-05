@@ -21,7 +21,7 @@
       <%= f.input :tax_id_number %>
       <%= f.input :place_of_birth %>
       <%= f.input :place_of_residence %>
-      <%= f.association :sector, label: "Sector al que pertence" %>
+      <%= f.association :sector, label: "Sector al que pertence", collection: Sector.where(election_type: "Popular"), hint: "Solo están disponibles los sectores que realizan elección popular. Si desea participar y su organización no se encuentra en esta lista diríjase a los directivos de su organización e infórmese cómo se llevará a cabo la elección interna de las representantes autónomas. También puede escribirnos a politicaspublicasmujeres@antioquia.gov.co" %>
       <%= f.input :organization %>
       <%= f.input :address %>
       <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
