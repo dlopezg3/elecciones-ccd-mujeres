@@ -32,7 +32,7 @@ ActiveAdmin.register Candidacy do
   end
 
   xls(i18n_scope: [:activerecord, :attributes, :candidacy],
-      header_format: { weight: :bold, color: :blue }) do
+      header_format: { weight: :bold }) do
 
     only_columns :name, :last_name, :organization, :tax_id_number, :place_of_birth, :place_of_residence, :residence_area_type, :phone, :secondary_phone, :expertise, :value_proposition
     column("photo") { |candidacy| candidacy.photo.service_url if candidacy.photo.attached? }
