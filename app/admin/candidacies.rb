@@ -22,8 +22,6 @@ ActiveAdmin.register Candidacy do
     column :residence_area_type
     column :phone
     column :secondary_phone
-    column :expertise
-    column :value_proposition
     column("Foto") { |candidacy| candidacy.cloudinary_url(candidacy.photo) }
     column("Documento de identidad") { |candidacy| candidacy.cloudinary_url(candidacy.document) }
     column("Aval de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.confirmation_letter) }
