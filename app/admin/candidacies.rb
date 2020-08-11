@@ -35,10 +35,10 @@ ActiveAdmin.register Candidacy do
       header_format: { weight: :bold, color: :blue }) do
 
     only_columns :name, :last_name, :organization, :tax_id_number, :place_of_birth, :place_of_residence, :residence_area_type, :phone, :secondary_phone, :expertise, :value_proposition
-    column("photo") { |candidacy| candidacy.photo.service_url }
-    column("document") { |candidacy| candidacy.document.service_url }
-    column("confirmation_letter") { |candidacy| candidacy.confirmation_letter.service_url }
-    column("organization_confirmation_letter") { |candidacy| candidacy.organization_confirmation_letter.service_url }
-    column("autonomus_confirmation_letter") { |candidacy| candidacy.autonomus_confirmation_letter.service_url }
+    column("photo") { |candidacy| candidacy.photo.service_url if candidacy.photo.attached? }
+    column("document") { |candidacy| candidacy.document.service_url if candidacy.document.attached? }
+    column("confirmation_letter") { |candidacy| candidacy.confirmation_letter.service_url if candidacy.confirmation_letter.attached? }
+    column("organization_confirmation_letter") { |candidacy| candidacy.organization_confirmation_letter.service_url if candidacy.organization_confirmation_letter.attached? }
+    column("autonomus_confirmation_letter") { |candidacy| candidacy.autonomus_confirmation_letter.service_url if candidacy.autonomus_confirmation_letter.attached? }
   end
 end
