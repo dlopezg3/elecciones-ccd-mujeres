@@ -56,3 +56,8 @@
     padding: 0 20vw;
   }
 }
+@media (max-width: 600px) {
+  .card {
+    margin: 0.8rem 0.4rem;
+  }
+}
