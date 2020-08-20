@@ -25,7 +25,7 @@ class Votation::VotesController < ApplicationController
       redirect_to votation_sector_candidacy_path(@sector, @candidacy)
     else
       flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
-      render 'edit'
+      render 'new'
     end
   end
 
