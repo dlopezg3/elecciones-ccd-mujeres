@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'vote/new'
+  get 'vote/create'
   ActiveAdmin.routes(self)
   devise_for :admins
   get 'candidates/show'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :votation do
     resources :sectors, only: [:index] do
-      resources :candidacies, only: [:index, :show], controller: 'sectors/candidacies'
+      resources :candidacies, only: [:index, :show]
     end
   end
 
