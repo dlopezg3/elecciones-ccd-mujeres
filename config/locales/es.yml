@@ -28,6 +28,11 @@ es:
         confirmation_letter: Aval de la organización
         organization_confirmation_letter: Certificado de existencia de la organización
         autonomus_confirmation_letter: Carta aceptación sectores autónomos
+      vote:
+        voter_tid: Número de cédula
+        voter_email: Correo Eléctronico
+        voter_full_name: Nombre completo
+        voter_phone: Teléfono de contacto
     models:
       candidate: Candidata
       candidacy: Candidatura
