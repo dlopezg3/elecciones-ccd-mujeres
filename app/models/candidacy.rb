@@ -10,6 +10,8 @@ class Candidacy < ApplicationRecord
   has_one_attached :organization_confirmation_letter
   has_one_attached :autonomus_confirmation_letter
 
+  has_many :votes
+
   # after_create :send_confirmation_email
 
   validates :name, presence: true
