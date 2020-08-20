@@ -1,0 +1,26 @@
+<div class="conainer m-4">
+
+  <div class="sector-container">
+    <div class="d-flex h1 justify-content-center">
+      <i class="fas fa-vote-yea mr-3 align-items-center d-flex" ></i>
+      <h1>
+        Elige tu sector para elegir candidata
+      </h1>
+    </div>
+    <div class="row sector-row">
+      <%@sectors.each do |sector| %>
+        <div class="col-sm-12">
+          <%= link_to votation_sector_candidacies_path(sector) do %>
+            <div class="card">
+              <div class="card-description">
+                <h2><%= sector.name %></h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
