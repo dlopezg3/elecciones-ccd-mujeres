@@ -1,4 +1,4 @@
-class Votation::Sectors::CandidaciesController < ApplicationController
+class Votation::CandidaciesController < ApplicationController
   skip_after_action :verify_authorized, only: :show
   skip_after_action :verify_policy_scoped, only: :index
   before_action :set_sector, only: :index
