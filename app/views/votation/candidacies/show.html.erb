@@ -1,6 +1,10 @@
-<div class="main-container">
+<div class="main-container-vote">
+    <div class="volver-btn d-flex align-items-center">
+      <%= render 'shared/go-back-link', sector: @sector%>
+    </div>
   <div class="profile-column">
     <div class="profile-avatar">
+
       <% if @candidacy.photo.attached? %>
         <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 340, height: 340, class: 'business-show-logo') %>
       <% else %>
@@ -40,7 +44,7 @@
       </div>
     </div>
   </div>
-  <div class="card card text-center profile-card value_proposition">
+  <div class="card text-center profile-card value_proposition">
     <div class="card-body">
       <div class="card-title">
         <h6 class="font-weight-bold">
@@ -51,6 +55,12 @@
         <p>
           <%= @candidacy.value_proposition %>
         </p>
+      </div>
+    </div>
+  </div>
+    <div class="sticky-xs-btn">
+      <div>
+        <%= link_to "Votar por esta candidata", new_votation_sector_candidacy_vote_path(@candidacy.sector, @candidacy), class:"btn btn-primary btn-lg btn-block btn-vote d-flex justify-content-center align-items-center"  %>
       </div>
     </div>
   </div>
