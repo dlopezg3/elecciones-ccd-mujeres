@@ -1,3 +1,58 @@
 .profile-card {
   padding: 16px;
 }
+.card {
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1)
+}
+.sector-container{
+  margin: 0 auto;
+  .card {
+    height: 175px;
+    margin-top: 15px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    background: linear-gradient(-65deg, $my-green 0%, $light-green 100%);
+    border-radius: 8px;
+    &:hover {
+      // transition: background 1s ease;
+      background: linear-gradient(-45deg, $my-green 100%, $light-green 0%);
+    }
+  }
+  .card-user-container {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    box-shadow: 0 0 1em rgba(0,0,0,0.5)
+  }
+  .card-description {
+    position: absolute;
+    top: 4rem;
+    text-align: center;
+    width:100%;
+  }
+  .card-description h2 {
+    font-size: 1.25rem;
+  }
+  .card-description p {
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: lighter;
+  }
+}
+@media (min-width: 900px) {
+  .sector-row {
+    padding: 0 20vw;
+  }
+}
