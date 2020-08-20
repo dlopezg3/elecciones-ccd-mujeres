@@ -1,0 +1,57 @@
+.btn-back {
+  background-color: transparent;
+  color: $main-black;
+  font-family: $headers-font;
+  &:hover {
+    font-weight: 700;
+    transition: font-weight 0.2s linear 0.2s;
+  }
+}
+.back_arrow {
+  position: relative;
+  height: 16px;
+}
+
+@media (max-width: 899px) {
+  .btn-vote {
+    grid-area: btn-vote;
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    position: sticky;
+  }
+  .main-container-vote{
+    padding: 0.8rem 0.4rem
+  }
+  .volver-btn {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 900px) {
+  .btn-vote {
+    grid-area: btn-vote;
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+  .volver-btn {
+    grid-area: volver-btn;
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky-xs-btn {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 0rem;
+  }
+  .volver-btn {
+    margin-bottom: 0rem;
+  }
+  .main-container-vote{
+    padding: 0rem 0rem
+  }
+}
