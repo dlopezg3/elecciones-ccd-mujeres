@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
   devise_for :admins
   get 'candidates/show'
@@ -6,6 +7,12 @@ Rails.application.routes.draw do
   devise_for :candidates, controllers: { registrations: "candidates/registrations" }
 
   resources :candidacies, only: [:show, :new, :create, :edit, :update]
+
+  namespace :votation do
+    resources :sectors, only: [:index] do
+      resources :candidacies, only: [:index, :show], controller: 'sectors/candidacies'
+    end
+  end
 
   root to: 'pages#home'
 
