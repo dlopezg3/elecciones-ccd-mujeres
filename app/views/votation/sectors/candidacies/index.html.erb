@@ -1,0 +1,3 @@
+<% @candidacies.each do |cand| %>
+ <%= link_to cand.name, votation_sector_candidacy_path(cand.sector_id, cand)  %>
+<% end %>
