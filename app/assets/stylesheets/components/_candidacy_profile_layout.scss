@@ -15,17 +15,31 @@
     grid-gap: 24px;
     background-image: url('https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm1_hvwibd.jpg');
     background-size: cover;
-    padding: 64px;
+    padding: 32px;
+    min-height: calc(100vh - 56px);
+  }
+  .main-container-vote {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+          "volver-btn expertise"
+          "profile expertise"
+          "profile expertise"
+          "profile expertise"
+          "profile value_proposition"
+          "profile value_proposition"
+          "sector value_proposition"
+          "sector value_proposition"
+          "organization value_proposition"
+          "organization btn-vote";
+    grid-gap: 24px;
+    background-image: url('https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm1_hvwibd.jpg');
+    background-size: cover;
+    padding: 32px;
     min-height: calc(100vh - 56px);
   }
   .profile-column {
-    // background-color: blue;
     grid-area: profile;
-    // background-color: #fff;
-    // background-clip: border-box;
-    // border: 1px solid rgba(0, 0, 0, 0.125);
-    // border-radius: 2px;
-    padding: 16px;
   }
   .expertise {
     grid-area: expertise,
@@ -40,3 +54,4 @@
     grid-area: sector;
   }
 }
+
