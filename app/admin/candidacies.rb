@@ -7,6 +7,7 @@ ActiveAdmin.register Candidacy do
   filter :last_name
   filter :validated
   filter :sector_name, as: :select, collection: -> {Sector.pluck(:name)}, label: "Sector"
+  filter :candidate_email, as: :string, label: "Email"
 
   index do
     index_column
