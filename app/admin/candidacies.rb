@@ -16,6 +16,7 @@ ActiveAdmin.register Candidacy do
     column :organization
     column :name
     column :last_name
+    column("Email") { |candidacy| candidacy.candidate }
     column :tax_id_number
     column :place_of_birth
     column :place_of_residence
