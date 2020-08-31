@@ -37,6 +37,7 @@ ActiveAdmin.register Candidacy do
       header_format: { weight: :bold }) do
 
     only_columns :name, :last_name, :organization, :tax_id_number, :place_of_birth, :place_of_residence, :residence_area_type, :phone, :secondary_phone, :expertise, :value_proposition, :validated, :comments
+    column("sector") { |candidacy| candidacy.sector.name }
     column("email") { |candidacy| candidacy.candidate.email }
     column("photo") { |candidacy| candidacy.photo.service_url if candidacy.photo.attached? }
     column("document") { |candidacy| candidacy.document.service_url if candidacy.document.attached? }
