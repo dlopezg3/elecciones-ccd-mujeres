@@ -32,8 +32,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.instance_of? Candidate
-      candidacy_path(current_candidate.candidacy) unless current_candidate.candidacy.nil?
-      new_candidacy_path
+      if current_candidate.candidacy.nil?
+        new_candidacy_path
+      else
+        candidacy_path(current_candidate.candidacy)
+      end
     else
       super
     end
