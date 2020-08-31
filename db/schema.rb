@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_134946) do
+ActiveRecord::Schema.define(version: 2020_08_31_135511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_08_20_134946) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "organization"
+    t.boolean "validated", default: false
+    t.string "comments"
     t.index ["candidate_id"], name: "index_candidacies_on_candidate_id"
     t.index ["sector_id"], name: "index_candidacies_on_sector_id"
   end
