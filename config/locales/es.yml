@@ -29,7 +29,7 @@ es:
         organization_confirmation_letter: Certificado de existencia de la organización
         autonomus_confirmation_letter: Carta aceptación sectores autónomos
         email: Correo
-        validated: Vadlidado
+        validated: Validado
         comments: Comentarios
       vote:
         voter_tid: Número de cédula
