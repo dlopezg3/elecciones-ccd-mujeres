@@ -28,6 +28,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def configure_permitted_parameters
+    update_attrs = [:password, :current_password]
+    devise_parameter_sanitizer.permit :account_update, keys: update_attrs
+  end
+
   protected
 
   def after_sign_in_path_for(resource_or_scope)
