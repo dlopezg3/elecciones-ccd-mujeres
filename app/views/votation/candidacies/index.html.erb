@@ -20,7 +20,7 @@
               <h4><%= "#{cand.name} #{cand.last_name}" %></h4>
               <h2><%=  cand.sector.name %></h2>
 
-              <p><%= cand.value_proposition %></p>
+              <p><%= "#{cand.value_proposition[0..100]}..." %></p>
             </div>
           </div>
         <% end %>
