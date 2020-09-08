@@ -1,6 +1,6 @@
 <div class="main-container-vote">
     <div class="volver-btn d-flex align-items-center">
-      <%= render 'shared/go-back-link', sector: @sector%>
+      <%= render 'shared/go-back-link', sector: @candidacy.sector%>
     </div>
   <div class="profile-column">
     <div class="profile-avatar">
@@ -60,7 +60,7 @@
   </div>
     <div class="sticky-xs-btn">
       <div>
-        <%= link_to "Votar por esta candidata", new_votation_sector_candidacy_vote_path(@candidacy.sector, @candidacy), class:"btn btn-primary btn-lg btn-block btn-vote d-flex justify-content-center align-items-center"  %>
+        <%= link_to "Votar por esta candidata", new_votation_candidacy_vote_path(@candidacy), class:"btn btn-primary btn-lg btn-block btn-vote d-flex justify-content-center align-items-center"  %>
       </div>
     </div>
   </div>
