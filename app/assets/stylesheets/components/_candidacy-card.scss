@@ -53,7 +53,9 @@
     background-image: url('https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm1_hvwibd.jpg');
     background-size: cover;
     // padding: 2rem  4rem;
-    min-height: 100vh;
+    min-height: 90vh;
+    max-height: 150vh;
+    background-color: white;
 }
 
 @media (max-width: 899px) {
