@@ -1,24 +1,26 @@
-<div class="container  candidacy-cards-container">
+<div class="candidacy-cards-container">
+  <div class="container">
 
-  <div class="sector-container">
-    <div class="d-flex h1 justify-content-center">
-      <i class="fas fa-vote-yea mr-3 align-items-center d-flex" ></i>
-      <h1>
-        Elige un sector para elegir candidata
-      </h1>
+    <div class="sector-container">
+      <div class="d-flex h1 justify-content-center">
+        <i class="fas fa-vote-yea mr-3 align-items-center d-flex" ></i>
+        <h1>
+          Elige un sector para elegir candidata
+        </h1>
+      </div>
+      <div class="row sector-row">
+        <%@sectors.each do |sector| %>
+          <div class="col-sm-12">
+            <%= link_to votation_sector_candidacies_path(sector) do %>
+              <div class="card-category grow">
+                <%= sector.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="row sector-row">
-      <%@sectors.each do |sector| %>
-        <div class="col-sm-12">
-          <%= link_to votation_sector_candidacies_path(sector) do %>
-            <div class="card-category grow">
-              <%= sector.name %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+
   </div>
-
 </div>
 
