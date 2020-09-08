@@ -1,0 +1,58 @@
+.card-candidacy {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  background-color: $light-gray;
+}
+.grow {
+  transition: all .2s ease-in-out;
+  &:hover { transform: scale(1.05); }
+}
+
+.card-candidacy img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-candidacy h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-candidacy p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-candidacy .card-candidacy-infos {
+  padding: 16px;
+}
+
+.card-text-black {
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+}
+.candidacy-cards-container {
+    background-image: url('https://res.cloudinary.com/dyq6th4ur/image/upload/v1596057149/fondo-formulario-ccm1_hvwibd.jpg');
+    background-size: cover;
+    // padding: 2rem  4rem;
+    min-height: 100vh;
+}
+
+@media (max-width: 899px) {
+  .candidacy-cards-container {
+    // padding: 2rem 0rem;
+  }
+}
