@@ -1,11 +1,11 @@
 .card-candidacy {
   overflow: hidden;
-  height: 120px;
+  height: 10rem;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem 0;
   background-color: $light-gray;
 }
 .grow {
@@ -22,6 +22,11 @@
 .card-candidacy h2 {
   font-size: 16px;
   font-weight: bold;
+  margin: 0;
+}
+
+.card-candidacy h4 {
+  font-size: 20px;
   margin: 0;
 }
 
