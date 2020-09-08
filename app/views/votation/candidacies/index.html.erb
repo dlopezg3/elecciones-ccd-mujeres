@@ -17,7 +17,7 @@
           <div class="card-candidacy grow">
             <%= image_tag cand.photo %>
             <div class="card-candidacy-infos">
-              <h4><%= "#{cand.name} #{cand.last_name}" %></h4>
+              <h4><%= "#{cand.name.titleize} #{cand.last_name.titleize}" %></h4>
               <h2><%=  cand.sector.name %></h2>
 
               <p><%= "#{cand.value_proposition[0..100]}..." %></p>
