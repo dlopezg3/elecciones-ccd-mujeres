@@ -1,7 +1,7 @@
 class Votation::CandidaciesController < ApplicationController
   skip_after_action :verify_authorized, only: :show
   skip_after_action :verify_policy_scoped, only: :index
-  before_action :set_sector, only: [:index, :show]
+  before_action :set_sector, only: [:index]
 
   def index
     @candidacies = Candidacy.where(sector: @sector)

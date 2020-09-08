@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :candidacies, only: [:show, :new, :create, :edit, :update]
 
   namespace :votation do
-    resources :sectors, only: [:index] do
+    resources :sectors, only: [:index], shallow: true do
       resources :candidacies, only: [:index, :show] do
         resources :votes, only: [:new, :create]
       end
