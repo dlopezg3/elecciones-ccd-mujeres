@@ -22,7 +22,7 @@ class Votation::VotesController < ApplicationController
     authorize @vote
     if @vote.save
       flash[:notice] = "Tu voto se ha registrado con éxito"
-      redirect_to votation_sector_candidacy_path(@sector, @candidacy)
+      redirect_to votation_candidacy_path(@candidacy)
     else
       flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
       render 'new'
