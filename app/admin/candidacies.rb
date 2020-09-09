@@ -52,6 +52,7 @@ ActiveAdmin.register Candidacy do
     permitted = [ :name, :last_name, :tax_id_number, :place_of_birth,
                   :place_of_residence, :address, :residence_area_type,
                   :phone, :secondary_phone, :education_level, :expertise,
-                  :value_proposition, :organization, :validated, :comments, :photo ]
+                  :value_proposition, :organization, :validated, :comments, :photo,
+                  :sector ]
   end
 end
