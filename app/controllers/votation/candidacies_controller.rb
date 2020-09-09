@@ -4,7 +4,7 @@ class Votation::CandidaciesController < ApplicationController
   before_action :set_sector, only: [:index]
 
   def index
-    @candidacies = Candidacy.where(sector: @sector)
+    @candidacies = Candidacy.where(sector: @sector).validated
   end
 
   def show

@@ -28,6 +28,8 @@ class Candidacy < ApplicationRecord
   validates :organization_confirmation_letter, presence: true
   validates :disclaimer, acceptance: { message: 'Debes aceptar los términos y condiciones' }
 
+  scope :validated, -> { where(validated: true)}
+
   def initials
     return if name.blank?
 
