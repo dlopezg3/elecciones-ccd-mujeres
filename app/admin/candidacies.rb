@@ -53,6 +53,6 @@ ActiveAdmin.register Candidacy do
                   :place_of_residence, :address, :residence_area_type,
                   :phone, :secondary_phone, :education_level, :expertise,
                   :value_proposition, :organization, :validated, :comments, :photo,
-                  :sector ]
+                  :sector_id ]
   end
 end
