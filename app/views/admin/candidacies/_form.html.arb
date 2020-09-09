@@ -1,0 +1,18 @@
+active_admin_form_for [:admin, resource] do |f|
+  inputs 'Detalles de candidata' do
+    input :sector
+    input :name
+    input :last_name
+    input :tax_id_number
+    input :phone
+    input :education_level
+    input :expertise
+    input :value_proposition
+    input :comments
+    input :organization
+    input :validated
+    input :photo, as: :file, hint: object.cloudinary_url(object.photo)
+  end
+  actions
+end
+

@@ -33,6 +33,8 @@ ActiveAdmin.register Candidacy do
     actions
   end
 
+  form partial: 'form'
+
   xls(i18n_scope: [:activerecord, :attributes, :candidacy],
       header_format: { weight: :bold }) do
 
@@ -46,5 +48,10 @@ ActiveAdmin.register Candidacy do
     column("autonomus_confirmation_letter") { |candidacy| candidacy.autonomus_confirmation_letter.service_url if candidacy.autonomus_confirmation_letter.attached? }
   end
 
-  permit_params :name, :last_name, :tax_id_number, :place_of_birth, :place_of_residence, :address, :residence_area_type, :phone, :secondary_phone, :education_level, :expertise, :value_proposition, :organization, :validated, :comments
+  permit_params do
+    permitted = [ :name, :last_name, :tax_id_number, :place_of_birth,
+                  :place_of_residence, :address, :residence_area_type,
+                  :phone, :secondary_phone, :education_level, :expertise,
+                  :value_proposition, :organization, :validated, :comments, :photo ]
+  end
 end
