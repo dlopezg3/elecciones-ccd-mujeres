@@ -1,7 +1,7 @@
 <div class="home-container">
     <div class="home-btn">
       <% if current_candidate.nil? %>
-        <%= link_to "Registrar candidatura", new_candidate_registration_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to "Ver Candidatas", votation_sectors_path, class: "btn btn-primary btn-lg" %>
       <% elsif current_candidate.candidacy.nil? %>
         <%= link_to "Registrar candidatura", new_candidate_session_path, class: "btn btn-primary btn-lg" %>
       <% else %>
@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="home-info">
-  <div class="card text-center">
+  <div class="card text-center mb-4">
     <h2 class="mb-4">Consejo Consultivo de Mujeres de Antioquia</h2>
 
     <h4 class="mb-4">¡Bienvenidas mujeres del Departamento!</h4>
@@ -49,6 +49,10 @@
 
   </div>
 
+  <%= link_to "http://bit.ly/ccma-candidatas-def", target: "_blank" do  %>
+    <%= image_tag "https://res.cloudinary.com/dyq6th4ur/image/upload/v1599686828/Listado_definitivo_ewl9hd.jpg", alt: "alttext", style: "width:100%;"%>
+  <% end %>
+
   <div class="card text-center mt-4 mb-4">
     <p>
       <strong>
@@ -59,11 +63,10 @@
       Se ha ampliado el plazo de inscripciones. La nueva fecha límite de inscripción es el 21 de agosto.
     </p>
 
-    <p> <%= link_to "Consulte los cambios en el cronograma", "https://bit.ly/cronograma-ccma-2", target:"_blank", class:"btn btn-outline-secondary" %></p>
+    <p>
+      <%= link_to "Consulte los cambios en el cronograma", "https://bit.ly/cronograma-ccma-2", target:"_blank", class:"btn btn-outline-secondary" %>
+      </p>
   </div>
-  <%= link_to "http://bit.ly/CCMA-inscritas-subsanacion", target: "_blank" do  %>
-    <%= image_tag "https://res.cloudinary.com/dyq6th4ur/image/upload/v1599003315/listado_ho1abi.jpg", alt: "alttext", style: "width:100%;"%>
-  <% end %>
   <div class="card text-center mt-4">
     <h4 class="mb-4">
       Mayores informes
