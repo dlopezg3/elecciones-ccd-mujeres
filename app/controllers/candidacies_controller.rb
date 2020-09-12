@@ -19,10 +19,10 @@ class CandidaciesController < ApplicationController
     @candidacy.candidate = current_candidate
     authorize @candidacy
     if @candidacy.save
-      flash[:notice] = "Tu candidatura ha sido creada con éxito"
+      flash[:notice] = "La información se ha registrado correctamente"
       redirect_to candidacy_path(@candidacy)
     else
-      flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
+      flash.now[:alert] = "Por favor corrija los campos con error e intenta nuevamente"
       render 'new'
     end
   rescue ActiveStorage::IntegrityError => e
@@ -35,10 +35,10 @@ class CandidaciesController < ApplicationController
 
   def update
     if @candidacy.update(candidacy_params)
-      flash[:notice] = "Tu candidatura ha sido actualizada con éxito"
+      flash[:notice] = "La información se ha registrado correctamente"
       redirect_to candidacy_path(@candidacy)
     else
-      flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
+      flash.now[:alert] = "Por favor corrija los campos con error e intenta nuevamente"
       render 'edit'
     end
   rescue ActiveStorage::IntegrityError => e
