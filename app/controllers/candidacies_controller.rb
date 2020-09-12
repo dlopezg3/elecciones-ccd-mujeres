@@ -71,7 +71,9 @@ class CandidaciesController < ApplicationController
                                    :photo,
                                    :election_minute,
                                    :birthdate,
-                                   :rol)
+                                   :rol,
+                                   :autonomus_confirmation_letter
+                                   )
   end
 
   def set_candidacy
