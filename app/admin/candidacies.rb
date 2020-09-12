@@ -1,6 +1,6 @@
 ActiveAdmin.register Candidacy do
 
-  actions :index, :show, :update, :edit, :destroy
+  actions :index, :show, :update, :edit
   config.sort_order = 'created_at_desc'
 
   filter :name
