@@ -25,6 +25,7 @@ class Candidacy < ApplicationRecord
   validates :value_proposition, presence: true
   validates :photo, presence: true
   validates :document, presence: true
+  validates :autonomus_confirmation_letter, presence: true
   # validates :confirmation_letter, presence: true
   validates :organization_confirmation_letter, presence: true
   validates :election_minute, presence: true
