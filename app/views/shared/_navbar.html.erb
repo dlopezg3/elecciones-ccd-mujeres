@@ -19,6 +19,9 @@
         <%= link_to "Cerrar Sesión", destroy_candidate_session_path, method: :delete, class: "nav-link" %>
       <% else %>
         <li class="nav-item">
+          <%= link_to "Registrar Candidatura", new_candidate_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Iniciar Sesión", new_candidate_session_path, class: "nav-link" %>
         </li>
       <% end %>
