@@ -9,6 +9,7 @@ class Candidacy < ApplicationRecord
   has_one_attached :confirmation_letter
   has_one_attached :organization_confirmation_letter
   has_one_attached :autonomus_confirmation_letter
+  has_one_attached :election_minute
 
   has_many :votes
 
@@ -24,9 +25,11 @@ class Candidacy < ApplicationRecord
   validates :value_proposition, presence: true
   validates :photo, presence: true
   validates :document, presence: true
-  validates :confirmation_letter, presence: true
+  # validates :confirmation_letter, presence: true
   validates :organization_confirmation_letter, presence: true
+  validates :election_minute, presence: true
   validates :disclaimer, acceptance: { message: 'Debes aceptar los términos y condiciones' }
+  validates :rol, presence: true
 
   scope :validated, -> { where(validated: true)}
 
