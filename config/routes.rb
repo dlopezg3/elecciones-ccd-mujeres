@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   devise_for :admins
-  get 'candidates/show'
   devise_for :voters
   devise_for :candidates, controllers: { registrations: "candidates/registrations" }
 
@@ -17,6 +16,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+  get "/vote_confirmation" => "pages#vote_confirmation"
+
+
 
   require "sidekiq/web"
     authenticate :user, lambda { |u| u.admin } do
