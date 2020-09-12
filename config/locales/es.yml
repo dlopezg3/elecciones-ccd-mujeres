@@ -32,6 +32,7 @@ es:
         validated: Validado
         comments: Comentarios
         sector: Sector
+        election_minute: Acta de Elección
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico

@@ -2,6 +2,8 @@ class Votation::VotesController < ApplicationController
 
   before_action :set_candidacy, only: %w[new create edit]
   before_action :set_vote, only: %w[edit]
+  before_action :set_municipalities, only: %w[new create]
+  before_action :set_sectors, only: %w[new create]
 
   def pundit_user
     current_voter
@@ -21,10 +23,10 @@ class Votation::VotesController < ApplicationController
     @vote.candidacy = @candidacy
     authorize @vote
     if @vote.save
-      flash[:notice] = "Tu voto se ha registrado con éxito"
-      redirect_to votation_candidacy_path(@candidacy)
+      flash[:notice] = "Su voto se ha registrado con éxito"
+      redirect_to vote_confirmation_path
     else
-      flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
+      flash.now[:alert] = "Por favor corrija los campos con error e intente nuevamente"
       render 'new'
     end
   end
@@ -32,7 +34,9 @@ class Votation::VotesController < ApplicationController
   private
 
   def vote_params
-    params.require(:vote).permit(:voter_tid, :voter_phone, :voter_email, :voter_full_name, :candidacy_id)
+    params.require(:vote).permit(:voter_tid, :voter_phone, :voter_email,
+                                 :voter_full_name, :candidacy_id, :municipality_id,
+                                 :sector_id, :organization)
   end
 
   def set_candidacy
@@ -42,5 +46,13 @@ class Votation::VotesController < ApplicationController
 
   def set_vote
     @vote = authorize Vote.find(params[:id])
+  end
+
+  def set_municipalities
+    @municipalities = Municipality.all.sort_by(&:name)
+  end
+
+  def set_sectors
+    @sectors = Sector.where(org_type: "Popular").sort_by(&:name)
   end
 end

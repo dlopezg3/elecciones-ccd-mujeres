@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_135511) do
+ActiveRecord::Schema.define(version: 2020_09_11_231152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2020_08_31_135511) do
     t.string "organization"
     t.boolean "validated", default: false
     t.string "comments"
+    t.string "rol"
+    t.date "birthdate"
     t.index ["candidate_id"], name: "index_candidacies_on_candidate_id"
     t.index ["sector_id"], name: "index_candidacies_on_sector_id"
   end
@@ -98,6 +100,13 @@ ActiveRecord::Schema.define(version: 2020_08_31_135511) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_candidates_on_email", unique: true
     t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
+  end
+
+  create_table "municipalities", force: :cascade do |t|
+    t.string "name"
+    t.string "subregion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -136,7 +145,12 @@ ActiveRecord::Schema.define(version: 2020_08_31_135511) do
     t.bigint "voter_phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "sector_id", null: false
+    t.bigint "municipality_id", null: false
+    t.string "organization"
     t.index ["candidacy_id"], name: "index_votes_on_candidacy_id"
+    t.index ["municipality_id"], name: "index_votes_on_municipality_id"
+    t.index ["sector_id"], name: "index_votes_on_sector_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -144,4 +158,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_135511) do
   add_foreign_key "candidacies", "sectors"
   add_foreign_key "organizations", "sectors"
   add_foreign_key "votes", "candidacies"
+  add_foreign_key "votes", "municipalities"
+  add_foreign_key "votes", "sectors"
 end

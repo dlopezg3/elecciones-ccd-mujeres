@@ -3,6 +3,8 @@ active_admin_form_for [:admin, resource] do |f|
     input :sector
     input :name
     input :last_name
+    input :rol
+    input :birthdate
     input :tax_id_number
     input :phone
     input :education_level
@@ -12,6 +14,11 @@ active_admin_form_for [:admin, resource] do |f|
     input :organization
     input :validated
     input :photo, as: :file, hint: object.cloudinary_url(object.photo)
+    input :document, as: :file, hint: object.cloudinary_url(object.document)
+    input :confirmation_letter, as: :file, hint: object.cloudinary_url(object.confirmation_letter)
+    input :organization_confirmation_letter, as: :file, hint: object.cloudinary_url(object.organization_confirmation_letter)
+    input :autonomus_confirmation_letter, as: :file, hint: object.cloudinary_url(object.autonomus_confirmation_letter)
+    input :election_minute, as: :file, hint: object.cloudinary_url(object.election_minute)
   end
   actions
 end

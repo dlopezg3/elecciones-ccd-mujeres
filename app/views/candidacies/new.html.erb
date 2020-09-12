@@ -1,51 +1,57 @@
-<div class="home-container-plain">
-
-  <div class="container p-4">
-  <h2 class="mb-4" > Diligencia la información para registrar la candidatura</h2>
-
-  <%= simple_form_for @candidacy,
-  wrapper: :horizontal_form,
-  wrapper_mappings: {
-    boolean:       :horizontal_boolean,
-    check_boxes:   :horizontal_collection,
-    date:          :horizontal_multi_select,
-    datetime:      :horizontal_multi_select,
-    file:          :horizontal_file,
-    radio_buttons: :horizontal_collection,
-    range:         :horizontal_range,
-    time:          :horizontal_multi_select
-  }  do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :last_name %>
-      <%= f.input :tax_id_number %>
-      <%= f.input :place_of_birth %>
-      <%= f.input :place_of_residence %>
-      <%= f.association :sector, label: "Sector al que pertence", collection: Sector.where(election_type: "Popular"), hint: "Solo están disponibles los sectores que realizan elección popular. Si desea participar y su organización no se encuentra en esta lista diríjase a los directivos de su organización e infórmese cómo se llevará a cabo la elección interna de las representantes autónomas. También puede escribirnos a politicaspublicasmujeres@antioquia.gov.co" %>
-      <%= f.input :organization %>
-      <%= f.input :address %>
-      <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
-      <%= f.input :phone, as: :tel %>
-      <%= f.input :secondary_phone, as: :tel %>
-      <%= f.input :education_level, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
-      <%= f.input :expertise, as: :text, hint: "Describir brevemente los logros a nivel académico, laboral y/o comunitario en favor del reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres en el sector que representa. Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidata" %>
-      <%= f.input :value_proposition, as: :text, label: "¿Qué aportaría desde su experiencia, conocimientos y acciones al Consejo Consultivo Departamental de mujeres?", hint: "Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidatas" %>
-      <%= f.input :photo, as: :file, hint: "Adjuntar una foto personal.  Esta será cargada en la plataforma" %>
-      <%= f.input :document, as: :file, hint: "Adjuntar una copia de tu documento de identificación." %>
-      <%= f.input :confirmation_letter, as: :file, hint: "Adjuntar carta firmada por la/el Representante Legal, Director/a, Presidenta/e o Coordinador/a de la organización, grupo, o comunidad a la que representa, en la que conste la experiencia de la organización y de la candidata que se postula, en el reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres y específicamente del sector que se va a representar."  %>
-      <%= f.input :organization_confirmation_letter, as: :file, hint: "Adjuntar una copia de la personería jurídica o del registro de Cámara de Comercio, o declaración extrajuicio, o cualquier otro documento que acredite la existencia de la organización emitido por entidades u organizaciones que conozcan el proceso." %>
-      <%= f.input :autonomus_confirmation_letter, as: :file, hint: "Adjuntar en pdf la carta de aceptación como representante para el Consejo Consultivo Departamental de Mujeres 2020 -2023.  El formato podrá ser descargado dando click #{link_to 'Aquí', 'https://bit.ly/3fbCfjf', target: "_blank" } (Solo aplica para las representantes elegidas por los sectores autónomos).".html_safe %>
-      <%= content_for(:disclaimer) do %>
-        <%= link_to "Ver términos y condiciones", "https://bit.ly/terminos-ccma", target:"_blank" %>
-      <% end %>
-      <div class="mt-4 text-decoration-none">
-        <%= f.input :disclaimer, as: :boolean, label: "", hint: content_for(:disclaimer), class:"text-decoration-none" %>
-      </div>
-
-    <div class="form-actions mb-4 mt-4">
-      <%= f.button :submit, "Enviar inscripción", class:"btn btn-primary" %>
+<div data-controller="loader">
+  <div data-target="loader.spinner" class="custom-modal d-none">
+    <div class="loader">
     </div>
-  <% end %>
+  </div>
+
+  <div class="home-container-plain">
+
+    <div class="container p-4">
+    <h2 class="mb-4" > Diligencie la información para registrar la candidatura</h2>
+
+    <%= simple_form_for @candidacy,
+    wrapper: :horizontal_form,
+    wrapper_mappings: {
+      boolean:       :horizontal_boolean,
+      check_boxes:   :horizontal_collection,
+      date:          :horizontal_multi_select,
+      datetime:      :horizontal_multi_select,
+      file:          :horizontal_file,
+      radio_buttons: :horizontal_collection,
+      range:         :horizontal_range,
+      time:          :horizontal_multi_select
+    }  do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :last_name %>
+          <%= f.input :tax_id_number %>
+          <%= f.input :phone, as: :tel %>
+          <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                                  end_year: Date.today.year,
+                                  order: [:day, :month, :year], label: "Fecha de nacimiento" %>
+          <%= f.input :place_of_residence, collection: Municipality.pluck(:name).sort %>
+          <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
+          <%= f.association :sector, label: "Sector al que pertence", collection: Sector.all%>
+          <%= f.input :organization %>
+          <%= f.input :rol, collection: ["Princiapl", "Suplente"] %>
+          <%= f.input :education_level, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
+          <%= f.input :expertise, as: :text, hint: "Describir brevemente los logros a nivel académico, laboral y/o comunitario en favor del reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres en el sector que representa. Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidata" %>
+          <%= f.input :value_proposition, as: :text, label: "¿Qué aportaría desde su experiencia, conocimientos y acciones al Consejo Consultivo Departamental de mujeres?", hint: "Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidatas" %>
+          <%= f.input :photo, as: :file, hint: "Adjuntar una foto personal en formato.  Esta será cargada en la plataforma" %>
+          <%= f.input :document, as: :file, hint: "Adjuntar una copia del documento de identificación." %>
+          <%= f.input :organization_confirmation_letter, as: :file, hint: "Adjuntar una copia de la personería jurídica o del registro de Cámara de Comercio, o declaración extrajuicio, o cualquier otro documento que acredite la existencia de la organización emitido por entidades u organizaciones que conozcan el proceso." %>
+          <%= f.input :election_minute, as: :file, hint: "".html_safe %>
+          <%= content_for(:disclaimer) do %>
+            <%= "Con la presentación del presente formato usted autoriza a la Administración Departamental, para que utilice la información consignada en el mismo con fines estadísticos y/o académicos. Esto en cumplimiento del Artículo 7 del Decreto 1377 de 2013 por medio del cual se reglamenta la Ley 1581 de 2012 por medio de la cual se expidió el régimen general de la protección de datos personales."  %>
+          <% end %>
+          <div class="mt-4 text-decoration-none">
+            <%= f.input :disclaimer, as: :boolean, label: "", hint: content_for(:disclaimer), class:"text-decoration-none" %>
+          </div>
+
+        <div class="form-actions mb-4 mt-4">
+          <%= f.button :submit, "Enviar inscripción", class:"btn btn-primary", "data-action":"click->loader#showLoader" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
