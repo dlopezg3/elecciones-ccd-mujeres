@@ -7,7 +7,7 @@
   <div class="home-container-plain">
 
     <div class="container p-4">
-    <h2 class="mb-4" > Diligencie la información para registrar la candidatura</h2>
+    <h2 class="mb-4" > Diligencie la información para registrar la representacion</h2>
 
     <%= simple_form_for @candidacy,
     wrapper: :horizontal_form,
@@ -33,14 +33,15 @@
           <%= f.input :residence_area_type, collection: ["Rural", "Urbano"] %>
           <%= f.association :sector, label: "Sector al que pertence", collection: Sector.all%>
           <%= f.input :organization %>
-          <%= f.input :rol, collection: ["Princiapl", "Suplente"] %>
+          <%= f.input :rol, collection: ["Principal", "Suplente"] %>
           <%= f.input :education_level, collection: ["Primaria", "Secundaria", "Técnico", "Tecnológico", "Universitario", "Posgrado"]  %>
           <%= f.input :expertise, as: :text, hint: "Describir brevemente los logros a nivel académico, laboral y/o comunitario en favor del reconocimiento, garantía y/o restablecimiento de los derechos de las mujeres en el sector que representa. Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidata" %>
           <%= f.input :value_proposition, as: :text, label: "¿Qué aportaría desde su experiencia, conocimientos y acciones al Consejo Consultivo Departamental de mujeres?", hint: "Esta información será el insumo para la elaboración del perfil que se cargará en el sitio web de la Gobernación de Antioquia para el proceso de presentación de las candidatas" %>
           <%= f.input :photo, as: :file, hint: "Adjuntar una foto personal en formato.  Esta será cargada en la plataforma" %>
           <%= f.input :document, as: :file, hint: "Adjuntar una copia del documento de identificación." %>
           <%= f.input :organization_confirmation_letter, as: :file, hint: "Adjuntar una copia de la personería jurídica o del registro de Cámara de Comercio, o declaración extrajuicio, o cualquier otro documento que acredite la existencia de la organización emitido por entidades u organizaciones que conozcan el proceso." %>
-          <%= f.input :election_minute, as: :file, hint: "".html_safe %>
+          <%= f.input :autonomus_confirmation_letter, as: :file, hint: "Adjunte el formato de aceptación firmado por usted, en el cual, acepta la representación del sector ante el Consejo Consultivo Departamental de Mujeres.".html_safe %>
+          <%= f.input :election_minute, as: :file, hint: "Adjunte acta que dé cuenta del proceso interno de elección de la representante.".html_safe %>
           <%= content_for(:disclaimer) do %>
             <%= "Con la presentación del presente formato usted autoriza a la Administración Departamental, para que utilice la información consignada en el mismo con fines estadísticos y/o académicos. Esto en cumplimiento del Artículo 7 del Decreto 1377 de 2013 por medio del cual se reglamenta la Ley 1581 de 2012 por medio de la cual se expidió el régimen general de la protección de datos personales."  %>
           <% end %>
