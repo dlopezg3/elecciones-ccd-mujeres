@@ -23,11 +23,14 @@ ActiveAdmin.register Candidacy do
     column :residence_area_type
     column :phone
     column :secondary_phone
+    column :rol
+    column :birthdate
     column("Foto") { |candidacy| candidacy.cloudinary_url(candidacy.photo) }
     column("Documento de identidad") { |candidacy| candidacy.cloudinary_url(candidacy.document) }
     column("Aval de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.confirmation_letter) }
     column("Certificado de existencia de la organización") { |candidacy| candidacy.cloudinary_url(candidacy.organization_confirmation_letter) }
     column("Carta aceptación sectores autónomos") { |candidacy| candidacy.cloudinary_url(candidacy.autonomus_confirmation_letter) }
+    column("Acta de elección") { |candidacy| candidacy.cloudinary_url(candidacy.election_minute) }
     column :validated
     column :comments
     actions
@@ -46,6 +49,7 @@ ActiveAdmin.register Candidacy do
     column("confirmation_letter") { |candidacy| candidacy.confirmation_letter.service_url if candidacy.confirmation_letter.attached? }
     column("organization_confirmation_letter") { |candidacy| candidacy.organization_confirmation_letter.service_url if candidacy.organization_confirmation_letter.attached? }
     column("autonomus_confirmation_letter") { |candidacy| candidacy.autonomus_confirmation_letter.service_url if candidacy.autonomus_confirmation_letter.attached? }
+    column("election_minute") { |candidacy| candidacy.election_minute.service_url if candidacy.election_minute.attached? }
   end
 
   permit_params do
@@ -53,6 +57,7 @@ ActiveAdmin.register Candidacy do
                   :place_of_residence, :address, :residence_area_type,
                   :phone, :secondary_phone, :education_level, :expertise,
                   :value_proposition, :organization, :validated, :comments, :photo,
-                  :sector_id ]
+                  :sector_id, :document, :confirmation_letter, :organization_confirmation_letter,
+                  :autonomus_confirmation_letter, :election_minute, :rol, :birthdate]
   end
 end
