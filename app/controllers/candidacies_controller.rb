@@ -25,6 +25,9 @@ class CandidaciesController < ApplicationController
       flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
       render 'new'
     end
+  rescue ActiveStorage::IntegrityError => e
+    flash.now[:alert] = "Uno o varios de los archivos que intenta subir exceden el tamaño permitido. Por favor elija archivos con menos tamaño e intente nuevamente"
+    render 'new'
   end
 
   def edit
@@ -38,6 +41,9 @@ class CandidaciesController < ApplicationController
       flash.now[:alert] = "Por favor corrige los campos con error e intenta nuevamente"
       render 'edit'
     end
+  rescue ActiveStorage::IntegrityError => e
+    flash.now[:alert] = "Uno o varios de los archivos que intenta subir exceden el tamaño permitido. Por favor elija archivos con menos tamaño e intente nuevamente"
+    render 'edit'
   end
 
   private
@@ -62,7 +68,10 @@ class CandidaciesController < ApplicationController
                                    :document,
                                    :confirmation_letter,
                                    :organization_confirmation_letter,
-                                   :photo)
+                                   :photo,
+                                   :election_minute,
+                                   :birthdate,
+                                   :rol)
   end
 
   def set_candidacy
