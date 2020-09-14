@@ -34,6 +34,9 @@ es:
         sector: Sector
         election_minute: Acta de Elección
         birthdate: Fecha de nacimiento
+        document_expedition: Fecha de expedición cédula
+        candidate_id: Documento de candidata
+        candidacy: Candidata
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico
