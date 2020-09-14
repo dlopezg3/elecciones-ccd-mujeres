@@ -39,6 +39,7 @@ es:
         voter_email: Correo Eléctronico
         voter_full_name: Nombre completo
         voter_phone: Teléfono de contacto
+        document_expedition: Fecha de expedición cédula
     models:
       candidate: Candidata
       candidacy: Candidatura
