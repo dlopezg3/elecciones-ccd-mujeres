@@ -33,6 +33,7 @@ es:
         comments: Comentarios
         sector: Sector
         election_minute: Acta de Elección
+        birthdate: Fecha de nacimiento
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico
