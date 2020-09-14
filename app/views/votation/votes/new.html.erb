@@ -20,7 +20,7 @@
       <%= f.input :voter_full_name %>
       <%= f.input :voter_tid %>
       <%= f.input :document_expedition, as: :date, start_year: Date.today.year - 100,
-                              end_year: Date.today.year, hint: "Estos datos deben corresponder con los consignados en la Registraduría Nacional del Estado Civil, en caso de no encontrar correspondencia se procederá con la respectiva notificación a las autoridades competentes para su investigación, bajo los artículos 287 y 289 de la Ley 599 de 2000. Falsedad en documento."%>
+                              end_year: Date.today.year, hint: "Estos datos deben corresponder con los consignados en la Registraduría Nacional del Estado Civil, en caso de no encontrar correspondencia se procederá con la respectiva notificación a las autoridades competentes para su investigación, bajo los artículos 287 y 289 de la Ley 599 de 2000. Falsedad en documento. "%>
       <%= f.input :voter_email %>
       <%= f.input :voter_phone %>
       <%= f.association :municipality, collection: @municipalities, label: "Municipio de residencia" %>
