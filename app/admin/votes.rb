@@ -12,10 +12,10 @@ ActiveAdmin.register Vote do
   index do
     index_column
     column :voter_tid
-    column :candidacy
     column :voter_email
     column :voter_full_name
     column :voter_phone
+    column("Candidata") { |vote| vote.candidacy }
     column :sector
     column :municipality
     column :organization
