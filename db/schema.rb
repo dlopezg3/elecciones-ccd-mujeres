@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_231152) do
+ActiveRecord::Schema.define(version: 2020_09_14_194415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_231152) do
     t.bigint "sector_id", null: false
     t.bigint "municipality_id", null: false
     t.string "organization"
+    t.date "document_expedition"
     t.index ["candidacy_id"], name: "index_votes_on_candidacy_id"
     t.index ["municipality_id"], name: "index_votes_on_municipality_id"
     t.index ["sector_id"], name: "index_votes_on_sector_id"
