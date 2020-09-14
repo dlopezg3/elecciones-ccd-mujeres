@@ -36,7 +36,7 @@ class Votation::VotesController < ApplicationController
   def vote_params
     params.require(:vote).permit(:voter_tid, :voter_phone, :voter_email,
                                  :voter_full_name, :candidacy_id, :municipality_id,
-                                 :sector_id, :organization)
+                                 :sector_id, :organization, :document_expedition)
   end
 
   def set_candidacy
