@@ -37,6 +37,11 @@ es:
         document_expedition: Fecha de expedición cédula
         candidate_id: Documento de candidata
         candidacy: Candidata
+        voter_tid: Documento de votante
+        voter_email:  Email de votante
+        voter_full_name: Nombre de votante
+        voter_phone: Teléfono de votante
+        municipality: Municipio
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico
@@ -46,9 +51,10 @@ es:
     models:
       candidate: Candidata
       candidacy: Candidatura
-      Sector: Sector
-      Voter: Votante
+      sector: Sector
+      voter: Votante
       user: Usuario
+      vote: Votos
   date:
     abbr_day_names:
     - dom
