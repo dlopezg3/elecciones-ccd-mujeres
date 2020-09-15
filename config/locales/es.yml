@@ -42,6 +42,8 @@ es:
         voter_full_name: Nombre de votante
         voter_phone: Teléfono de votante
         municipality: Municipio
+        subregion: Subregión
+        candidacy_sector: Sector de la candidata
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico

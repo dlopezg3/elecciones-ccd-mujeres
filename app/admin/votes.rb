@@ -28,8 +28,10 @@ ActiveAdmin.register Vote do
 
     only_columns :voter_tid, :voter_email, :voter_full_name, :voter_phone, :organization, :document_expedition
     column("sector") { |vote| vote.sector.name }
-    column("municipality") { |vote| vote.sector.name }
+    column("municipality") { |vote| vote.municipality.name }
+    column("subregion") { |vote| vote.municipality.subregion }
     column("candidacy") { |vote| vote.candidacy.name }
+    column("candidacy_sector") { |vote| vote.candidacy.sector.name }
     column("candidate_id") { |vote| vote.candidacy.tax_id_number }
   end
 
