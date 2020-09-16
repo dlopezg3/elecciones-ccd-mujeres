@@ -6,7 +6,7 @@
     <div class="profile-avatar">
 
       <% if @candidacy.photo.attached? %>
-        <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 300, height: 340, class: 'business-show-logo') %>
+        <%= cl_image_tag(@candidacy.photo.key, secure: true, width: 300, height: 340, class: 'business-show-logo', flags: "lossy",fetch_format: :auto)%>
       <% else %>
         <div class="rounded-lg d-flex justify-content-center align-items-center text-uppercase">
           <p class="font-weight-bold m-0 default-image"><%= @candidacy.initials %></p>
