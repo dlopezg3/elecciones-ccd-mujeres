@@ -26,7 +26,7 @@ ActiveAdmin.register Vote do
   xls(i18n_scope: [:activerecord, :attributes, :candidacy],
       header_format: { weight: :bold }) do
 
-    only_columns :voter_tid, :voter_email, :voter_full_name, :voter_phone, :organization, :document_expedition
+    only_columns :created_at, :voter_tid, :voter_email, :voter_full_name, :voter_phone, :organization, :document_expedition
     column("sector") { |vote| vote.sector.name }
     column("municipality") { |vote| vote.municipality.name }
     column("subregion") { |vote| vote.municipality.subregion }
