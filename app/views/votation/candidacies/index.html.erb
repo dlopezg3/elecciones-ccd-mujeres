@@ -15,7 +15,7 @@
       <% @candidacies.each do |cand| %>
         <%= link_to votation_candidacy_path(cand), class:"col-xs-12 col-sm-6 card-text-black" do  %>
           <div class="card-candidacy grow">
-            <%= image_tag cand.photo %>
+            <%= cl_image_tag(cand.photo.key, flags: "lossy", fetch_format: :auto)%>
             <div class="card-candidacy-infos">
               <h4><%= "#{cand.name.titleize} #{cand.last_name.titleize}" %></h4>
               <h2><%=  cand.sector.name %></h2>
