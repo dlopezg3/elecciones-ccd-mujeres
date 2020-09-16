@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   namespace :votation do
     resources :sectors, only: [:index], shallow: true do
       resources :candidacies, only: [:index, :show] do
-        resources :votes, only: [:new, :create]
+        # resources :votes, only: [:new, :create]
       end
     end
   end
 
   root to: 'pages#home'
-  get "/vote_confirmation" => "pages#vote_confirmation"
+  # get "/vote_confirmation" => "pages#vote_confirmation"
 
 
 
