@@ -45,6 +45,7 @@ es:
         subregion: Subregión
         candidacy_sector: Sector de la candidata
         created_at: Fecha de voto
+        rol: Rol
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico
