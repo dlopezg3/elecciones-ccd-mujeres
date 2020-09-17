@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="home-btn">
-    <%= link_to "Ver Candidatas", votation_sectors_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "Ver Resultlados", "http://bit.ly/resultados-ccma-2020", class: "btn btn-primary btn-lg", target: "_blank" %>
   </div>
 </div>
 <div class="home-info">
@@ -43,8 +43,8 @@
 
   </div>
 
-  <%= link_to "http://bit.ly/ccma-candidatas-def", target: "_blank" do  %>
-    <%= image_tag "https://res.cloudinary.com/dyq6th4ur/image/upload/v1599686828/Listado_definitivo_ewl9hd.jpg", alt: "alttext", style: "width:100%;"%>
+  <%= link_to "http://bit.ly/resultados-ccma-2020", target: "_blank" do  %>
+    <%= cl_image_tag("https://res.cloudinary.com/dyq6th4ur/image/upload/v1600344621/Banner_Concejo_Consultivo_xloz14.jpg", flags: "lossy",fetch_format: :auto,  width: "100%") %>
   <% end %>
 
   <div class="card text-center mt-4 mb-4">
@@ -54,11 +54,11 @@
       </strong>
     </p>
     <p class="text-center">
-      Se ha ampliado el plazo de inscripciones. La nueva fecha límite de inscripción es el 21 de agosto.
+      Se han realizado cambios en el cronograma
     </p>
 
     <p>
-      <%= link_to "Consulte los cambios en el cronograma", "https://bit.ly/cronograma-ccma-2", target:"_blank", class:"btn btn-outline-secondary" %>
+      <%= link_to "Consulte los cambios", "http://bit.ly/cronograma-ccma-02", target:"_blank", class:"btn btn-outline-secondary" %>
       </p>
   </div>
   <div class="card text-center mt-4">
