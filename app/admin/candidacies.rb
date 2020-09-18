@@ -33,6 +33,7 @@ ActiveAdmin.register Candidacy do
     column("Acta de elección") { |candidacy| candidacy.cloudinary_url(candidacy.election_minute) }
     column :validated
     column :comments
+    column :elected
     actions
   end
 
@@ -41,7 +42,7 @@ ActiveAdmin.register Candidacy do
   xls(i18n_scope: [:activerecord, :attributes, :candidacy],
       header_format: { weight: :bold }) do
 
-    only_columns :name, :last_name, :organization, :tax_id_number, :place_of_birth, :place_of_residence, :residence_area_type, :phone, :secondary_phone, :expertise, :value_proposition, :validated, :comments, :rol
+    only_columns :name, :last_name, :organization, :tax_id_number, :place_of_birth, :place_of_residence, :residence_area_type, :phone, :secondary_phone, :expertise, :value_proposition, :validated, :comments, :rol, :elected
     column("sector") { |candidacy| candidacy.sector.name }
     column("email") { |candidacy| candidacy.candidate.email }
     column("photo") { |candidacy| candidacy.photo.service_url if candidacy.photo.attached? }
@@ -58,6 +59,6 @@ ActiveAdmin.register Candidacy do
                   :phone, :secondary_phone, :education_level, :expertise,
                   :value_proposition, :organization, :validated, :comments, :photo,
                   :sector_id, :document, :confirmation_letter, :organization_confirmation_letter,
-                  :autonomus_confirmation_letter, :election_minute, :rol, :birthdate]
+                  :autonomus_confirmation_letter, :election_minute, :rol, :birthdate, :elected]
   end
 end
