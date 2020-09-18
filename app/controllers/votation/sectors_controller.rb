@@ -5,6 +5,6 @@ class Votation::SectorsController < ApplicationController
   end
 
   def index
-    @sectors = policy_scope([:votation, Sector.where.not(election_type: "Autonóma")])
+    @sectors = policy_scope([:votation, Sector.all])
   end
 end
