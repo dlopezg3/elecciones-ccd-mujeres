@@ -46,6 +46,7 @@ es:
         candidacy_sector: Sector de la candidata
         created_at: Fecha de voto
         rol: Rol
+        elected: Elegida
       vote:
         voter_tid: Número de cédula
         voter_email: Correo Eléctronico

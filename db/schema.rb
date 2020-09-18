@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_194415) do
+ActiveRecord::Schema.define(version: 2020_09_18_183532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_09_14_194415) do
     t.string "comments"
     t.string "rol"
     t.date "birthdate"
+    t.boolean "elected", default: false
     t.index ["candidate_id"], name: "index_candidacies_on_candidate_id"
     t.index ["sector_id"], name: "index_candidacies_on_sector_id"
   end
