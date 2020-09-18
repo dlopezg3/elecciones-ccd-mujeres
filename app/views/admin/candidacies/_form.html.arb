@@ -1,5 +1,6 @@
 active_admin_form_for [:admin, resource] do |f|
   inputs 'Detalles de candidata' do
+    input :elected
     input :sector
     input :name
     input :last_name
