@@ -23,16 +23,17 @@ class Candidacy < ApplicationRecord
   validates :expertise, presence: true
   validates :organization, presence: true
   validates :value_proposition, presence: true
-  validates :photo, presence: true
-  validates :document, presence: true
-  validates :autonomus_confirmation_letter, presence: true
+  # validates :photo, presence: true
+  # validates :document, presence: true
+  # validates :autonomus_confirmation_letter, presence: true
   # validates :confirmation_letter, presence: true
-  validates :organization_confirmation_letter, presence: true
-  validates :election_minute, presence: true
+  # validates :organization_confirmation_letter, presence: true
+  # validates :election_minute, presence: true
   validates :disclaimer, acceptance: { message: 'Debes aceptar los términos y condiciones' }
   validates :rol, presence: true
 
   scope :validated, -> { where(validated: true)}
+  scope :elected, -> { where(elected: true)}
 
   def initials
     return if name.blank?
